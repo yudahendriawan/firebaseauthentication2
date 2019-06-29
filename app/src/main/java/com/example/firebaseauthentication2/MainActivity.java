@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 String email = mEmail.getText().toString();
                 String pass = mPassword.getText().toString();
                 if(!email.equals("") && !pass.equals("")){
+                    toastMessage("Signing in..");
                     mAuth.signInWithEmailAndPassword(email,pass);
                 }else{
                     toastMessage("You didn't fill in all the fields.");
@@ -77,14 +78,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*btnAddItems.setOnClickListener(new View.OnClickListener() {
+        btnAddItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: Switching Activities.");
                 Intent intent = new Intent(MainActivity.this, AddItemsToDatabase.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override
